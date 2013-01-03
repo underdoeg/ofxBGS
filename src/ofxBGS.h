@@ -10,8 +10,6 @@
 class ofxBGS
 {
 public:
-	typedef std::map<int, IBGS*> ProcessorMap;
-
 	enum Processor{
 		AdaptiveBgLearning,
 		FrameDifference,
@@ -19,8 +17,32 @@ public:
 		MixtureOfGaussianV2,
 		StaticFrameDifference,
 		WeightedMovingMeans,
-		WeightedMovingVariance
+		WeightedMovingVariance,
+		///
+		DPAdaptiveMedian,
+		DPGrimsonGMM,
+		DPZivkovicAGMM,
+		DPMean,
+		DPWrenGA,
+		DPPratiMediod,
+		DPEigenbackground,
+		///
+		TBT2FGMM_UM,
+		TBT2FGMM_UV,
+		TBFuzzySugenoIntegral,
+		TBFuzzyChoquetIntegral,
+		///
+		MultiLayer,
+		///
+		SimpleGaussian,
+		FuzzyGaussian,
+		MixtureOfGaussians,
+		AdaptiveSOM,
+		FuzzyAdaptiveSOM
 	};
+
+	typedef std::map<int, IBGS*> ProcessorMap;
+	typedef std::vector<Processor> ProcessorList;
 
 	ofxBGS();
 	~ofxBGS();
@@ -34,15 +56,24 @@ public:
 	cv::Mat getForegroundMat();
 
 	void setProcessor(Processor processor);
+	void nextProcessor();
+	void previousProcessor();
 private:
-	void addProcessor(Processor type, IBGS* p);
+	void setProcessor(Processor type, IBGS* p);
 	ProcessorMap processors;
+
+	ProcessorList availableProcessors;
+	ProcessorList::iterator curProcessorIt;
+
 	IBGS* curProcessor;
 	cv::Mat frame;
 	cv::Mat frameBW;
 	cv::Mat foreground;
 	cv::Mat foregroundBW;
 	cv::Mat foregroundMask;
+	ofImage foregroundImg;
+
+	ofDirectory configDir;
 };
 
 #endif // OFXBGS_H

@@ -115,14 +115,14 @@ void FuzzySugenoIntegral::process(const cv::Mat &img_input, cv::Mat &img_output)
     img_foreground_u1.copyTo(img_output);
 
     //if(showOutput)
-    {
+    /*{
       cvShowImage("SI LBP Input", lbp_input_f1);
       cvShowImage("SI LBP Background", lbp_background_f1);
       cvShowImage("SI Prob FG Mask", integral_sugeno_f1);
 
       //cv::imshow("SI BG Model", img_background_f3);
       //cv::imshow("SI FG Mask", img_foreground_u1);
-    }
+    }*/
 
     if(frameNumber == (framesToLearn + 1))
       std::cout << "FuzzySugenoIntegral updating background model by adaptive-selective learning..." << std::endl;

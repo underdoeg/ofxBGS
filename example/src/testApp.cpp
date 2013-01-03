@@ -25,7 +25,10 @@ void testApp::keyPressed(int key){
 
 //--------------------------------------------------------------
 void testApp::keyReleased(int key){
-
+	if(key == OF_KEY_RIGHT)
+		bgs.nextProcessor();
+	if(key == OF_KEY_LEFT)
+		bgs.previousProcessor();
 }
 
 //--------------------------------------------------------------
