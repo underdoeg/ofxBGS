@@ -55,8 +55,8 @@ void WeightedMovingMeanBGS::process(const cv::Mat &img_input, cv::Mat &img_outpu
   minVal = 0.; maxVal = 1.;
   img_background_f.convertTo(img_background, CV_8U, 255.0/(maxVal - minVal), -minVal);
   
-  if(showBackground)
-    cv::imshow("W Moving Mean BG Model", img_background);
+  //if(showBackground)
+    //cv::imshow("W Moving Mean BG Model", img_background);
 
   cv::Mat img_foreground;
   cv::absdiff(img_input, img_background, img_foreground);
@@ -64,8 +64,8 @@ void WeightedMovingMeanBGS::process(const cv::Mat &img_input, cv::Mat &img_outpu
   if(enableThreshold)
     cv::threshold(img_foreground, img_foreground, threshold, 255, cv::THRESH_BINARY);
 
-  if(showOutput)
-    cv::imshow("W Moving Mean FG Mask", img_foreground);
+  //if(showOutput)
+    //cv::imshow("W Moving Mean FG Mask", img_foreground);
 
   img_foreground.copyTo(img_output);
 

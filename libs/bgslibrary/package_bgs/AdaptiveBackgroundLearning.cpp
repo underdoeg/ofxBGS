@@ -51,11 +51,13 @@ void AdaptiveBackgroundLearning::process(const cv::Mat &img_input, cv::Mat &img_
   if(enableThreshold)
     cv::threshold(img_foreground, img_foreground, threshold, 255, cv::THRESH_BINARY);
   
-  if(showForeground)
-    cv::imshow("BG Learning FG Mask", img_foreground);
 
-  if(showBackground)
-    cv::imshow("BG Learning BG Model", img_background);
+  //if(showForeground)
+    //cv::imshow("BG Learning FG Mask", img_foreground);
+
+  //if(showBackground)
+    //cv::imshow("BG Learning BG Model", img_background);
+
 
   img_foreground.copyTo(img_output);
 

@@ -55,8 +55,8 @@ void DPEigenbackgroundBGS::process(const cv::Mat &img_input, cv::Mat &img_output
   
   cv::Mat foreground(highThresholdMask.Ptr());
 
-  if(showOutput)
-    cv::imshow("Eigenbackground (Oliver)", foreground);
+  //if(showOutput)
+    //cv::imshow("Eigenbackground (Oliver)", foreground);
 
   foreground.copyTo(img_output);
 

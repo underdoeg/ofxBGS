@@ -266,8 +266,8 @@ float PerformanceUtils::SimilarityMeasure(IplImage *image, IplImage *ground_trut
   
   if(debug)
   {
-    cv::imshow("A^B", i);
-    cv::imshow("AvB", u);
+    //cv::imshow("A^B", i);
+    //cv::imshow("AvB", u);
 
     //std::cout << "Similarity Measure: " << s  << std::endl;
     

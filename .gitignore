@@ -2,3 +2,5 @@ obj/
 *.so
 *.tags
 *.workspace.*
+config/
+example/bin/example_debug

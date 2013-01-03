@@ -28,8 +28,8 @@ void StaticFrameDifferenceBGS::process(const cv::Mat &img_input, cv::Mat &img_ou
   if(enableThreshold)
     cv::threshold(img_foreground, img_foreground, threshold, 255, cv::THRESH_BINARY);
 
-  if(showOutput)
-    cv::imshow("Static Frame Difference", img_foreground);
+  //if(showOutput)
+    //cv::imshow("Static Frame Difference", img_foreground);
 
   img_foreground.copyTo(img_output);
 

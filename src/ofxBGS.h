@@ -3,10 +3,25 @@
 
 #include "ofMain.h"
 #include "ofxCv.h"
+#include "IBGS.h"
+
+#define BGS_MODULE "ofxBGS"
 
 class ofxBGS
 {
 public:
+	typedef std::map<int, IBGS*> ProcessorMap;
+
+	enum Processor{
+		AdaptiveBgLearning,
+		FrameDifference,
+		MixtureOfGaussianV1,
+		MixtureOfGaussianV2,
+		StaticFrameDifference,
+		WeightedMovingMeans,
+		WeightedMovingVariance
+	};
+
 	ofxBGS();
 	~ofxBGS();
 
@@ -18,6 +33,16 @@ public:
 	ofImage getForegroundImage();
 	cv::Mat getForegroundMat();
 
+	void setProcessor(Processor processor);
+private:
+	void addProcessor(Processor type, IBGS* p);
+	ProcessorMap processors;
+	IBGS* curProcessor;
+	cv::Mat frame;
+	cv::Mat frameBW;
+	cv::Mat foreground;
+	cv::Mat foregroundBW;
+	cv::Mat foregroundMask;
 };
 
 #endif // OFXBGS_H

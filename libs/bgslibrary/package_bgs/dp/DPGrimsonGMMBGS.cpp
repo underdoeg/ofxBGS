@@ -54,8 +54,8 @@ void DPGrimsonGMMBGS::process(const cv::Mat &img_input, cv::Mat &img_output)
   
   cv::Mat foreground(highThresholdMask.Ptr());
 
-  if(showOutput)
-    cv::imshow("GMM (Grimson)", foreground);
+  //if(showOutput)
+    //cv::imshow("GMM (Grimson)", foreground);
   
   foreground.copyTo(img_output);
 

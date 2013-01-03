@@ -53,8 +53,8 @@ void DPZivkovicAGMMBGS::process(const cv::Mat &img_input, cv::Mat &img_output)
   
   cv::Mat foreground(highThresholdMask.Ptr());
 
-  if(showOutput)
-    cv::imshow("Gaussian Mixture Model (Zivkovic)", foreground);
+  //if(showOutput)
+    //cv::imshow("Gaussian Mixture Model (Zivkovic)", foreground);
   
   foreground.copyTo(img_output);
 

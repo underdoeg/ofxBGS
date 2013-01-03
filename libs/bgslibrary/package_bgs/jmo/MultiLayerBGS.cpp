@@ -213,10 +213,10 @@ void MultiLayerBGS::process(const cv::Mat &img_input, cv::Mat &img_output)
   img_merged = cv::Mat(merged_img);
   img_foreground = cv::Mat(fg_mask_img);
 
-  if(showOutput)
+  //if(showOutput)
   {
-    cv::imshow("MLBGS Layers", img_merged);
-    cv::imshow("MLBGS FG Mask", img_foreground);
+    //cv::imshow("MLBGS Layers", img_merged);
+    //cv::imshow("MLBGS FG Mask", img_foreground);
   }
 
   img_foreground.copyTo(img_output);

@@ -3,17 +3,19 @@
 //--------------------------------------------------------------
 void testApp::setup(){
 	grabber.initGrabber(GRABBER_WIDTH, GRABBER_HEIGHT);
-
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-	bgs.update(grabber.getPixelsRef());
+	grabber.update();
+	if(grabber.isFrameNew()){
+		bgs.update(grabber.getPixelsRef());
+	}
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
-
+	bgs.draw();
 }
 
 //--------------------------------------------------------------

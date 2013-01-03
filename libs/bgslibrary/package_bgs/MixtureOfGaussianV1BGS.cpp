@@ -37,8 +37,8 @@ void MixtureOfGaussianV1BGS::process(const cv::Mat &img_input, cv::Mat &img_outp
   if(enableThreshold)
     cv::threshold(img_foreground, img_foreground, threshold, 255, cv::THRESH_BINARY);
 
-  if(showOutput)
-    cv::imshow("Gaussian Mixture Model (KadewTraKuPong&Bowden)", img_foreground);
+  //if(showOutput)
+    ////cv::imshow("Gaussian Mixture Model (KadewTraKuPong&Bowden)", img_foreground);
 
   img_foreground.copyTo(img_output);
 

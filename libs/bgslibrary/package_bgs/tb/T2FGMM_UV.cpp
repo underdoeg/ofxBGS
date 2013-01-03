@@ -56,8 +56,8 @@ void T2FGMM_UV::process(const cv::Mat &img_input, cv::Mat &img_output)
   
   cv::Mat foreground(highThresholdMask.Ptr());
 
-  if(showOutput)
-    cv::imshow("T2FGMM-UV", foreground);
+  //if(showOutput)
+    //cv::imshow("T2FGMM-UV", foreground);
   
   foreground.copyTo(img_output);
 

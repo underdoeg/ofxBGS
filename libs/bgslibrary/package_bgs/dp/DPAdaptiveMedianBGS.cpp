@@ -53,8 +53,8 @@ void DPAdaptiveMedianBGS::process(const cv::Mat &img_input, cv::Mat &img_output)
   
   cv::Mat foreground(highThresholdMask.Ptr());
 
-  if(showOutput)
-    cv::imshow("Adaptive Median (McFarlane&Schofield)", foreground);
+  //if(showOutput)
+    //cv::imshow("Adaptive Median (McFarlane&Schofield)", foreground);
   
   foreground.copyTo(img_output);
 

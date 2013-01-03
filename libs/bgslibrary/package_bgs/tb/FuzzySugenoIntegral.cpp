@@ -53,8 +53,8 @@ void FuzzySugenoIntegral::process(const cv::Mat &img_input, cv::Mat &img_output)
     else
       img_background_f3 = alphaLearn*img_input_f3 + (1-alphaLearn)*img_background_f3;
 
-    if(showOutput)
-      cv::imshow("SI BG Model", img_background_f3);
+    //if(showOutput)
+      //cv::imshow("SI BG Model", img_background_f3);
   }
   else
   {
@@ -114,14 +114,14 @@ void FuzzySugenoIntegral::process(const cv::Mat &img_input, cv::Mat &img_output)
     img_foreground_f1.convertTo(img_foreground_u1, CV_8U, 255.0/(maxVal - minVal), -minVal);
     img_foreground_u1.copyTo(img_output);
 
-    if(showOutput)
+    //if(showOutput)
     {
       cvShowImage("SI LBP Input", lbp_input_f1);
       cvShowImage("SI LBP Background", lbp_background_f1);
       cvShowImage("SI Prob FG Mask", integral_sugeno_f1);
 
-      cv::imshow("SI BG Model", img_background_f3);
-      cv::imshow("SI FG Mask", img_foreground_u1);
+      //cv::imshow("SI BG Model", img_background_f3);
+      //cv::imshow("SI FG Mask", img_foreground_u1);
     }
 
     if(frameNumber == (framesToLearn + 1))

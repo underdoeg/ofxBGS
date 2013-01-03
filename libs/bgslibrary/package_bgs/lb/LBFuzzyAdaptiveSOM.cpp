@@ -42,10 +42,10 @@ void LBFuzzyAdaptiveSOM::process(const cv::Mat &img_input, cv::Mat &img_output)
   img_foreground = cv::Mat(m_pBGModel->GetFG());
   img_background = cv::Mat(m_pBGModel->GetBG());
     
-  if(showOutput)
+  //if(showOutput)
   {
-    cv::imshow("FSOM Mask", img_foreground);
-    cv::imshow("FSOM Model", img_background);
+    //cv::imshow("FSOM Mask", img_foreground);
+    //cv::imshow("FSOM Model", img_background);
   }
 
   img_foreground.copyTo(img_output);

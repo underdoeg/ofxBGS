@@ -53,8 +53,8 @@ void DPWrenGABGS::process(const cv::Mat &img_input, cv::Mat &img_output)
   
   cv::Mat foreground(highThresholdMask.Ptr());
 
-  if(showOutput)
-    cv::imshow("Gaussian Average (Wren)", foreground);
+  //if(showOutput)
+    //cv::imshow("Gaussian Average (Wren)", foreground);
   
   foreground.copyTo(img_output);
 

@@ -54,8 +54,8 @@ void DPPratiMediodBGS::process(const cv::Mat &img_input, cv::Mat &img_output)
   
   cv::Mat foreground(highThresholdMask.Ptr());
 
-  if(showOutput)
-    cv::imshow("Temporal Median (Cucchiara&Calderara)", foreground);
+  //if(showOutput)
+    //cv::imshow("Temporal Median (Cucchiara&Calderara)", foreground);
 
   foreground.copyTo(img_output);
 
