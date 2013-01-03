@@ -71,6 +71,9 @@ void ofxBGS::update(cv::Mat mat) {
 
 	//cv::erode(foregroundMask, foregroundMask,cv::Mat(), cv::Point(-1,-1), 4);
 	cv::threshold(foregroundBW, foregroundMask, 30, 255, cv::THRESH_BINARY);
+	//cv::GaussianBlur(foregroundMask, foregroundMask, cv::Size(3,3), 1.5);
+	//cv::erode(foregroundMask, foregroundMask, cv::Mat(), cv::Point(-1,-1), 4);
+	//cv::dilate(foregroundMask, foregroundMask, cv::Mat(), cv::Point(-1,-1));
 }
 
 void ofxBGS::update(ofPixelsRef pixels) {
@@ -90,7 +93,10 @@ void ofxBGS::draw(int x, int y) {
 	ofxCv::drawMat(frame, 0, 0, 320, 240);
 	ofDrawBitmapStringHighlight("INPUT FRAME", 5, 15);
 
-	ofxCv::drawMat(foreground, 320, 0, 320, 240);
+	frameMasked.setTo(cv::Scalar::all((0)));
+	frame.copyTo(frameMasked, foregroundMask);
+
+	ofxCv::drawMat(frameMasked, 320, 0, 320, 240);
 	ofDrawBitmapStringHighlight("FOREGROUND", 325, 15);
 
 	ofxCv::drawMat(foregroundBW, 0, 240, 320, 240);

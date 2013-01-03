@@ -71,6 +71,7 @@ private:
 	cv::Mat foreground;
 	cv::Mat foregroundBW;
 	cv::Mat foregroundMask;
+	cv::Mat frameMasked;
 	ofImage foregroundImg;
 
 	ofDirectory configDir;
