@@ -86,9 +86,7 @@ void ofxBGS::draw(int x, int y) {
 	ofPushStyle();
 
 	ofSetColor(0);
-	ofRect(0, 0, 660, 500);
 
-	ofTranslate(10, 10);
 	ofSetColor(255);
 	ofxCv::drawMat(frame, 0, 0, 320, 240);
 	ofDrawBitmapStringHighlight("INPUT FRAME", 5, 15);
@@ -114,7 +112,7 @@ ofImage ofxBGS::getForegroundImage() {
 	return foregroundImg;
 }
 
-cv::Mat ofxBGS::getForegroundMat() {
+cv::Mat& ofxBGS::getForegroundMat() {
 	return foregroundMask;
 }
 

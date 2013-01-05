@@ -53,7 +53,7 @@ public:
 
 	ofPixelsRef getForegroundPixels();
 	ofImage getForegroundImage();
-	cv::Mat getForegroundMat();
+	cv::Mat& getForegroundMat();
 
 	void setProcessor(Processor processor);
 	void nextProcessor();
